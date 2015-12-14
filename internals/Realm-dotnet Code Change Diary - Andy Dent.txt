@@ -1168,4 +1168,15 @@ Realm.cs
 - Close added
 - Dispose filled out to invoke Close
 
-  
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#55 Visual Studio IOS Build
+
+
+RealmVS.sln
+- copied from realm.sln
+
+Copied projects to VS versions in prep for VS updating them:
+- Realm.XamarinAndroidVS.csproj
+- Realm.XamarinIOSVS.csproj
+- IntegrationTests.XamarinAndroidVS.csproj
+- IntegrationTests.XamarinIOSVS.csproj
