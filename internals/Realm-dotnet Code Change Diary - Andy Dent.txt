@@ -1188,3 +1188,26 @@ Copied projects to VS versions in prep for VS updating them:
 - Realm.XamarinIOSVS.csproj
 - IntegrationTests.XamarinAndroidVS.csproj
 - IntegrationTests.XamarinIOSVS.csproj
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+#282 Minor cleanups whilst improving API docs
+GroupOpenMode.cs
+- removed unused enum
+
+Realm.Shared.csproj
+- removed GroupOpenMode.cs
+
+InteropConfig.cs (all)
+- made class internal (again)
+- removed GetDefaultDatabasePath as it returns same thing in all.
+
+Realm.cs
+- GetInstance just use the standard Xamarin call to get SpecialFolder instead of GetDefaultDatabasePath
+
+TransactionState.cs
+- removed
+
+RealmList.GetEnumerator
+- remove cast
+
+Realm.IsClosed
+- changed to property
