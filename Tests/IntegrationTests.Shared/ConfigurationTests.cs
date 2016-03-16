@@ -39,7 +39,7 @@ namespace IntegrationTests
         }
         
         [Test]
-        public void PathIsCanonicalised()
+        public void DatabasePathIsCanonicalised()
         {
             // Arrange
             var config = RealmConfiguration.DefaultConfiguration.ConfigWithPath(Path.Combine("..", "Documents", "fred.realm"));
@@ -48,6 +48,50 @@ namespace IntegrationTests
             Assert.That(Path.IsPathRooted(config.DatabasePath));
             Assert.That(config.DatabasePath, Is.StringEnding(Path.Combine("Documents", "fred.realm")));
             Assert.IsFalse(config.DatabasePath.Contains(".."));  // our use of relative up and down again was normalised out
+        }
+
+        [Test]
+        public void PathToRealmIsCanonicalised()
+        {
+            // Arrange
+            var path = RealmConfiguration.PathToRealm(Path.Combine("..", "Documents", "fred.realm"));
+
+            // Assert
+            Assert.That(Path.IsPathRooted(path));
+            Assert.That(path, Is.StringEnding(Path.Combine("Documents", "fred.realm")));
+            Assert.IsFalse(path.Contains(".."));  // our use of relative up and down again was normalised out
+        }
+
+        [Test]
+        public void DatabasePathHasExtension()
+        {
+            var config = RealmConfiguration.DefaultConfiguration.ConfigWithPath("myrealm");
+
+            Assert.That(config.DatabasePath, Is.StringEnding(Path.DirectorySeparatorChar + "myrealm.realm"));
+        }
+
+        [Test]
+        public void PathToRealmHasExtension()
+        {
+            var path = RealmConfiguration.PathToRealm("myrealm");
+
+            Assert.That(path, Is.StringEnding(Path.DirectorySeparatorChar + "myrealm.realm"));
+        }
+
+        [Test]
+        public void DatabasePathRetainsExplicitExtension()
+        {
+            var config = RealmConfiguration.DefaultConfiguration.ConfigWithPath("myrealm.rlm");
+
+            Assert.That(config.DatabasePath, Is.StringEnding(Path.DirectorySeparatorChar + "myrealm.rlm"));
+        }
+
+        [Test]
+        public void PathToRealmRetainsExplicitExtension()
+        {
+            var path = RealmConfiguration.PathToRealm("myrealm.rlm");
+
+            Assert.That(path, Is.StringEnding(Path.DirectorySeparatorChar + "myrealm.rlm"));
         }
 
         [Test]

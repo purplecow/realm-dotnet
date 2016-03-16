@@ -20,6 +20,8 @@ namespace Realms
     /// </remarks>
     public class RealmConfiguration
     {
+        private const string RealmExtension = "realm";
+
         /// <summary>
         /// Standard filename to be combined with the platform-specific document directory.
         /// </summary>
@@ -58,7 +60,11 @@ namespace Realms
             }
             if (optionalPath[optionalPath.Length-1] == Path.DirectorySeparatorChar)   // ends with dir sep
                 optionalPath = Path.Combine (optionalPath, DefaultRealmName);
-             return optionalPath;
+            
+            if (string.IsNullOrEmpty(Path.GetExtension(optionalPath)))
+                optionalPath = Path.ChangeExtension(optionalPath, RealmExtension);
+
+            return Path.GetFullPath(optionalPath);
         }
 
         /// <summary>
@@ -118,6 +124,10 @@ namespace Realms
                         newConfigPath = Path.Combine (newConfigPath, DefaultRealmName);  // add filename to relative subdir
                     candidatePath = Path.Combine (usWithoutFile, newConfigPath);
                 }
+
+                if (string.IsNullOrEmpty(Path.GetExtension(candidatePath)))
+                    candidatePath = Path.ChangeExtension(candidatePath, RealmExtension);
+
                 ret.DatabasePath = Path.GetFullPath(candidatePath);  // canonical version, removing embedded ../ and other relative artifacts
             }
             return ret;
