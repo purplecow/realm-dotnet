@@ -393,11 +393,13 @@ namespace Realms
             {
                 var fullpath = configuration.DatabasePath;
                 File.Delete(fullpath);
-                File.Delete(fullpath + ".log_a");  // eg: name at end of path is EnterTheMagic.realm.log_a   
-                File.Delete(fullpath + ".log_b");
-                File.Delete(fullpath + ".log");
                 File.Delete(fullpath + ".lock");
                 File.Delete(fullpath + ".note");
+                var managementDir = System.IO.Path.Combine(fullpath, "management");
+                if (File.Exists(managementDir)) {
+                    foreach (var toDel in Directory.EnumerateFiles(managementDir))
+                        File.Delete(toDel);
+                }
             }
         }
 
