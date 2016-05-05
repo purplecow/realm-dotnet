@@ -77,7 +77,7 @@
     <Reference Include="System.Data" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="Realm">
-      <HintPath>..\packages\Realm.0.74.0\lib\Xamarin.iOS10\Realm.dll</HintPath>
+      <HintPath>..\packages\Realm.0.74.1\lib\Xamarin.iOS10\Realm.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
