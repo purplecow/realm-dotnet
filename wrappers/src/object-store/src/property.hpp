@@ -30,7 +30,8 @@ namespace realm {
         PropertyTypeString = 2,
         PropertyTypeData   = 4,
         PropertyTypeAny    = 6,
-        PropertyTypeDate   = 8,
+        PropertyTypeDate   = 7,
+//ASD        PropertyTypeDate   = 8,
         PropertyTypeObject = 12,
         PropertyTypeArray  = 13,
     };

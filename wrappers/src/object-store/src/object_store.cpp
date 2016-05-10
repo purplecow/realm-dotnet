@@ -245,7 +245,7 @@ static void copy_property_values(const Property& source, const Property& destina
             copy_property_values(source, destination, table, &Table::get_binary, &Table::set_binary);
             break;
         case PropertyTypeDate:
-            copy_property_values(source, destination, table, &Table::get_timestamp, &Table::set_timestamp);
+            copy_property_values(source, destination, table, &Table::get_datetime, &Table::set_datetime);
             break;
         default:
             break;

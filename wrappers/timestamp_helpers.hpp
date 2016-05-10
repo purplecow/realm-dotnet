@@ -5,8 +5,8 @@
 // copied from realm-java realm/realm-jni/src/util.hpp
 
 #include <cstdint>
-#include <realm/timestamp.hpp>
-
+//ASD #include <realm/timestamp.hpp>
+/*
 inline int64_t to_milliseconds(const realm::Timestamp& ts)
 {
     // From core's reference implementation aka unit test
@@ -26,6 +26,6 @@ inline realm::Timestamp from_milliseconds(int64_t milliseconds)
     return realm::Timestamp(seconds, nanoseconds);
 }
 
-
+*/
 
 #endif  // REALM_TIMESTAMP_HELPERS_HPP

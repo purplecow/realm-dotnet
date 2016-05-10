@@ -194,7 +194,8 @@ namespace realm {
                 m_row.set_mixed(column, Accessor::to_mixed(ctx, value));
                 break;
             case PropertyTypeDate:
-                m_row.set_timestamp(column, Accessor::to_timestamp(ctx, value));
+                m_row.set_datetime(column, Accessor::to_datetime(ctx, value));
+//ASD                m_row.set_timestamp(column, Accessor::to_timestamp(ctx, value));
                 break;
             case PropertyTypeObject: {
                 if (Accessor::is_null(ctx, value)) {
@@ -246,7 +247,7 @@ namespace realm {
             case PropertyTypeAny:
                 throw "Any not supported";
             case PropertyTypeDate:
-                return Accessor::from_timestamp(ctx, m_row.get_timestamp(column));
+                return Accessor::from_datetime(ctx, m_row.get_datetime(column));
             case PropertyTypeObject: {
                 auto linkObjectSchema = m_realm->config().schema->find(property.object_type);
                 TableRef table = ObjectStore::table_for_object_type(m_realm->read_group(), linkObjectSchema->name);

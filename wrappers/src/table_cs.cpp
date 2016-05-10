@@ -147,20 +147,23 @@ REALM_EXPORT size_t table_get_string(const Table* table_ptr, size_t column_ndx, 
 
 REALM_EXPORT int64_t table_get_timestamp_milliseconds(const Table* table_ptr, size_t column_ndx, size_t row_ndx)
 {
-    return handle_errors([&]() {
+return 0;
+/*    return handle_errors([&]() {
         return to_milliseconds(table_ptr->get_timestamp(column_ndx, row_ndx));
-    });
+    });*/
 }
 
 REALM_EXPORT size_t table_get_nullable_timestamp_milliseconds(const Table* table_ptr, size_t column_ndx, size_t row_ndx, int64_t& ret_value)
 {
+return 0;
+/*
     return handle_errors([&]() {
         if (table_ptr->is_null(column_ndx, row_ndx))
             return 0;
 
         ret_value = to_milliseconds(table_ptr->get_timestamp(column_ndx, row_ndx));
         return 1;
-    });
+    });*/
 }
 
 REALM_EXPORT void table_set_link(Table* table_ptr, size_t column_ndx, size_t row_ndx, size_t target_row_ndx)
@@ -240,9 +243,10 @@ REALM_EXPORT void table_set_string_unique(Table* table_ptr, size_t column_ndx, s
 
 REALM_EXPORT void table_set_timestamp_milliseconds(Table* table_ptr, size_t column_ndx, size_t row_ndx, int64_t value)
 {
+/*
     return handle_errors([&]() {
         table_ptr->set_timestamp(column_ndx, row_ndx, from_milliseconds(value));
-    });
+    });*/
 }
 
 REALM_EXPORT Query* table_where(Table* table_ptr)
