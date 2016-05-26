@@ -18,6 +18,7 @@
 
 using System;
 using System.Reflection;
+using Android.Runtime;
 
 namespace Realms
 {

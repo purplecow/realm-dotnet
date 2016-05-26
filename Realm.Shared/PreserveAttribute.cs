@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
  
-namespace Realms
+namespace Android.Runtime
 {
     // Tell the linker to preserve a class or method even if it looks like it's not invoked.
     // Since it matches by name, it works to just declare it here.
