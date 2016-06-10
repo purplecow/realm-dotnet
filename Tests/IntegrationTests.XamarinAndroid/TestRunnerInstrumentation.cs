@@ -43,9 +43,9 @@ namespace IntegrationTests.XamarinAndroid
 		{
             NativeMethods.ALooper_prepare(0);
 
-			using (var output = Context.OpenFileOutput ("TestResults.Android.xml", FileCreationMode.WorldReadable)) 
+			using (var output = Context.OpenFileOutput("TestResults.Android.xml", FileCreationMode.WorldReadable)) 
 			{
-				IntegrationTests.Shared.TestRunner.Run ("Xamarin.Android", output);
+				TestRunner.Run("Android", output);
 			}
 
 			this.Finish (Result.Ok, null);

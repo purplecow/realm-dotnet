@@ -17,6 +17,7 @@
 ////////////////////////////////////////////////////////////////////////////
  
 using System;
+using System.IO;
 using System.Linq;
 using System.Collections.Generic;
 
@@ -30,12 +31,10 @@ namespace IntegrationTests.XamarinIOS
         // This is the main entry point of the application.
         static void Main (string[] args)
         {
-            // run unit tests in a headless mode when we're in Jenkins CI
-            var ci = Environment.GetEnvironmentVariable("WORKSPACE");
-            if (!string.IsNullOrEmpty (ci)) {
-                using (var output = System.IO.File.OpenWrite (System.IO.Path.Combine (ci, "TestResults.iOS.xml"))) 
+            if (args.Any("--headless".Equals)) {
+                using (var output = File.OpenWrite(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "TestResults.iOS.xml"))) 
                 {
-                    IntegrationTests.Shared.TestRunner.Run ("Xamarin.iOS", output);
+                    TestRunner.Run("iOS", output);
                 }
 
                 return;
