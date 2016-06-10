@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using NUnit.Framework.Internal;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
 	internal class TestRunner
 	{

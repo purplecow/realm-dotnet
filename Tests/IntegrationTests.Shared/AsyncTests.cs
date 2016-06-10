@@ -22,7 +22,7 @@ using System.Threading;
 using NUnit.Framework;
 using Realms;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class AsyncTests

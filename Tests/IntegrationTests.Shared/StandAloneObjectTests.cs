@@ -24,7 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class StandAloneObjectTests

@@ -23,7 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class RefreshTests

@@ -29,7 +29,7 @@ using System.Collections.Specialized;
 using System.Collections;
 using System.Runtime.InteropServices;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class NotificationTests

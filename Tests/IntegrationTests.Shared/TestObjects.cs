@@ -19,7 +19,7 @@
 using System;
 using Realms;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     public class AllTypesObject : RealmObject
     {

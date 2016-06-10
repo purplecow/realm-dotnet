@@ -26,7 +26,7 @@ using System.Diagnostics;
 
 // NOTE some of the following data comes from Tim's data used in the Browser screenshot in the Mac app store
 // unlike the Cocoa definitions, we use Pascal casing for properties
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class RelationshipTests

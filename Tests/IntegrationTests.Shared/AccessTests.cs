@@ -23,7 +23,7 @@ using NUnit.Framework;
 using NUnit.Framework.Constraints;
 using Realms;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class AccessTests

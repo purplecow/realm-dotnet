@@ -25,7 +25,7 @@ using System.IO;
 using System.Text;
 using System.Linq;
 
-namespace IntegrationTests.Shared
+namespace IntegrationTests
 {
     [TestFixture]
     public class DateTimeTests
